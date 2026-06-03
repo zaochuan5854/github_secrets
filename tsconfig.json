@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        // ブラウザ環境の標準API（DOM）と、モダンなJS（ES2022）の型を両方有効にする
+        "lib": [
+            "DOM",
+            "DOM.Iterable",
+            "ES2022"
+        ],
+        // Bun環境の型（bun-types）と、Node互換（@types/node）
+        "types": [
+            "bun-types",
+            "node"
+        ],
+        // switch文のケースで、意図しないフォールスルーをエラーにする
+        "noFallthroughCasesInSwitch": true,
+        // 使用されていないローカル変数や関数をエラー（または警告）にする
+        "noUnusedLocals": true,
+        // 使用されていない関数の引数をエラーにする
+        "noUnusedParameters": true,
+        // 関数が値を返す場合、すべてのルートで必ず return されているかを厳格にチェック
+        "noImplicitReturns": true,
+        // オブジェクトのプロパティアクセス時に undefined の可能性を厳格に追跡
+        "noUncheckedIndexedAccess": true,
+        // import 時に型（Type）のインポートであることを明示することを推奨/強制する
+        "verbatimModuleSyntax": true
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
