@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Decrypt Viewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <main class="shell">
+        <header class="hero">
+            <h1>暗号化されたファイル</h1>
+        </header>
+
+        <section class="panel">
+            <form id="decrypt-form" class="form">
+                <label class="field" id="entry-field">
+                    <span>エントリー</span>
+                    <input id="entry" name="entry" placeholder="エントリー名を入力" autocomplete="off" />
+                </label>
+                <label class="field">
+                    <span>パスワード</span>
+                    <input id="password" name="password" type="password" placeholder="パスワードを入力" />
+                </label>
+                <button id="submit" type="submit">開く</button>
+            </form>
+            <div class="status" id="status" role="status"></div>
+        </section>
+
+    </main>
+
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>
