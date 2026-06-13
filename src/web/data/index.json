@@ -1,6 +1,7 @@
 {
-  "nextId": 2,
+  "nextId": 3,
   "indexes": {
-    "sotsuron": 1
+    "sotsuron": 1,
+    "comfyui_trt": 2
   }
 }
