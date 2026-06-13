@@ -68,6 +68,19 @@ async function loadEncryptedEntry(entry) {
 }
 
 function openDecryptedFile(decrypted) {
+  if (decrypted.meta.name.endsWith(".md")) {
+    // 1. バイト配列をテキスト文字列に変換
+    const decoder = new TextDecoder("utf-8");
+    const mdText = decoder.decode(decrypted.fileBytes);
+    
+    // 2. ブラウザのセッションストレージに保存
+    sessionStorage.setItem("decrypted_md_text", mdText);
+    sessionStorage.setItem("decrypted_md_title", decrypted.meta.name);
+
+    // 3. パラメータは何もつけずにビューアーを開く
+    window.location.href = "public/md_viewer.html";
+    return;
+  }
   const blob = new Blob([decrypted.fileBytes], {
     type: decrypted.meta.type || "application/octet-stream",
   });
